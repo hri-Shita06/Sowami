@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  --bg-cream: #fffbf7;
+  --bg-blush: #fdf2f4;
+  --bg-peach: #ffe8d6;
+  --bg-lavender: #efe9fa;
+  --ink-primary: #332026;
+  --ink-secondary: #684c54;
+  --ink-muted: #8a6d75;
+  --rose-gold: #b76e79;
+  --rose-deep: #964857;
+  --pastel-pink: #f6bec9;
+  --soft-green: #6b8e6b;
+  --hairline: rgba(183, 110, 121, 0.18);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-cream);
+  color: var(--ink-primary);
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-handwritten {
+  font-family: "Caveat", cursive;
+}
+
+.min-h-screen-dvh {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.h-screen-dvh {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Soft ambient glow background */
+.romantic-canvas {
+  background:
+    radial-gradient(circle at 15% 12%, rgba(252, 231, 236, 0.85) 0%, transparent 45%),
+    radial-gradient(circle at 88% 18%, rgba(233, 225, 248, 0.72) 0%, transparent 45%),
+    radial-gradient(circle at 50% 65%, rgba(255, 232, 214, 0.55) 0%, transparent 55%),
+    radial-gradient(circle at 80% 90%, rgba(217, 232, 215, 0.45) 0%, transparent 40%),
+    #fffbf7;
+}
+
+/* Gentle breeze sway for bloomed flowers */
+@keyframes gentle-breeze {
+  0%,
+  100% {
+    transform: rotate(-1.6deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(1.8deg) translateY(-2px);
+  }
+}
+
+@keyframes gentle-breeze-alt {
+  0%,
+  100% {
+    transform: rotate(1.5deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-1.7deg) translateY(-2px);
+  }
+}
+
+@keyframes heartbeat-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 6px 18px rgba(183, 110, 121, 0.25));
+  }
+  28% {
+    transform: scale(1.07);
+    filter: drop-shadow(0 10px 24px rgba(183, 110, 121, 0.38));
+  }
+  45% {
+    transform: scale(1.01);
+  }
+  65% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes button-shimmer {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+
+.animate-breeze {
+  transform-origin: bottom center;
+  animation: gentle-breeze 5.5s ease-in-out infinite;
+}
+
+.animate-breeze-alt {
+  transform-origin: bottom center;
+  animation: gentle-breeze-alt 6.4s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+  animation: heartbeat-glow 2.4s ease-in-out infinite;
+}
+
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.38) 50%,
+    transparent 100%
+  );
+  animation: button-shimmer 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Mobile-first responsive rules */
+@media (max-width: 480px) {
+  .bouquet-stage-size {
+    max-width: 340px;
+  }
+
+  .mobile-touch-target {
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bouquet-stage-size {
+    max-width: 380px;
+  }
+}
+
+@media (min-width: 769px) {
+  .bouquet-stage-size {
+    max-width: 450px;
+  }
+}
+
+/* Respect device reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+
+  .animate-breeze,
+  .animate-breeze-alt,
+  .animate-heartbeat,
+  .btn-shimmer::after {
+    animation: none !important;
+  }
+}
