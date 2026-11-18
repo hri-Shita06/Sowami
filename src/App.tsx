@@ -122,7 +122,7 @@ export default function App() {
                 className="text-center max-w-2xl mx-auto"
               >
                 <h1 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-[#332026] text-balance leading-[1.15]">
-                  Happy Birthday, Sowami!"Amit dasgupta":)❤️
+                  Happy Birthday, Sowami!"Amit Dasgupta":)❤️
                 </h1>
                 <p className="mt-2.5 sm:mt-3 text-sm sm:text-lg text-[#684C54] text-balance leading-relaxed">
                   To my Mr husband, my best friend, my favourite human, and my soulmate and my forever home.
